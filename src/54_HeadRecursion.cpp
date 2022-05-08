@@ -1,5 +1,5 @@
-#define TAIL_RECURSION 0
-#if TAIL_RECURSION
+#define HEAD_RECURSION 1
+#if HEAD_RECURSION
 
 #include <iostream>
 
@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 {
     fun_r(atoi(argv[1]));
     fun_i(atoi(argv[1]));
+
     return 0;
 }
 
@@ -17,17 +18,18 @@ void fun_r(int n)
 {
     if (n > 0)
     {
-        std::cout << n << "\n";
         fun_r(n - 1);
+        std::cout << n << "\n";
     }
 }
 
 void fun_i(int n)
 {
-    while (n > 0)
+    int i = 1;
+    while (i <= n)
     {
-        std::cout << n << "\n";
-        --n;
+        std::cout << i << "\n";
+        ++i;
     }
 }
 

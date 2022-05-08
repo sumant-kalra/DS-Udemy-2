@@ -5,4 +5,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -std=c++14 -save-temps")
 
 add_executable(runApp 
                 src/Main.cpp
-                src/53_TailRecursion.cpp)
+                src/53_TailRecursion.cpp
+                src/54_HeadRecursion.cpp)
