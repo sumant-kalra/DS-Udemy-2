@@ -3,3 +3,7 @@
 
 # Ada Library Information
 *.ali
+
+# Build Folders
+build-debug/
+build-release/
