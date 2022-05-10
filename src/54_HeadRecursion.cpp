@@ -1,4 +1,4 @@
-#define HEAD_RECURSION 1
+#define HEAD_RECURSION 0
 #if HEAD_RECURSION
 
 #include <iostream>
