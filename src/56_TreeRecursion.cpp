@@ -1,9 +1,9 @@
-#define TREE_RECURSION 1
+#define TREE_RECURSION 0
 #if TREE_RECURSION
 
 #include <iostream>
 
-void fun(int n)
+static void fun(int n)
 {
     if (n > 0)
     {

@@ -7,4 +7,6 @@ add_executable(runApp
                 src/Main.cpp
                 src/53_TailRecursion.cpp
                 src/54_HeadRecursion.cpp
-                src/56_TreeRecursion.cpp)
+                src/56_TreeRecursion.cpp
+                src/58_IndirectRecursion.cpp
+                src/60_NestedRecursion.cpp)
