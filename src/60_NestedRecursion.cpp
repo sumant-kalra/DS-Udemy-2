@@ -1,4 +1,4 @@
-#define NESTED_RECURSION 1
+#define NESTED_RECURSION 0
 #if NESTED_RECURSION
 
 #include <iostream>
