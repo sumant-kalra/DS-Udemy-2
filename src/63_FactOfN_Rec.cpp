@@ -1,4 +1,4 @@
-#define FACT_N 1
+#define FACT_N 0
 #if FACT_N
 
 #include <iostream>
