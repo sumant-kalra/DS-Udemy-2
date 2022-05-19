@@ -1,4 +1,4 @@
-#define POWER_N 1
+#define POWER_N 0
 #if POWER_N
 
 #include <iostream>
