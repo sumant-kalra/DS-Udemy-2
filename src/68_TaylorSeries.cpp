@@ -34,6 +34,7 @@ static int fact_I(int n)
 
 // Calculate the value of e^x using n degree polynomial from taylor's series
 
+// Trivial approach
 static double e_i(double x, int n)
 {
     double result = 0.0;
@@ -54,11 +55,44 @@ static double e_r(double x, int n)
     return e_r(x, n - 1) + power_2I(x, n) / fact_I(n);
 }
 
-// The additional function calls are unnecessary in this case as the term to be added with each iteration can be determined
-// from the previous iteration easily instead of calculating it all from scratch like while calculating x^4, x^3 could be used which
-// is calculated in the previous iteration.
+// The above two functions are not optimized because of the calls to power() and fact() functions for each value of n, which can
+// be avoided if the result of (x^n/n!) term from the previous iteration can be reused.
+// For example, e(x,8)
+// At an intermediate iteration, we will have n = 6,
+// and for n = 6 we calculate x^6/6! by calling the functions power() and fact(), which calculate these values iterating
+// over the lower values of n. In the next iteration for n = 7, we calculate x^7/7! by calling the functions power() and fact()
+// calculate the values iterating again over the lower values of n. So, same calculations are repeated by using this approach.
+//
+// The function e(x,n) can be optimized if the value of the (x^n/n!) is calculated using the results from the previous iteration
+// instead of calling power() and fact() for every iteration.
+//
 
-// Write the functions again without using the functions
+// Optimized versions of the functions
+static double e_I(double x, int n)
+{
+    double result = 1.0;
+    double num = 1.0;
+    double denom = 1.0;
+    for (int i = 1; i <= n; ++i)
+    {
+        num = num * x;
+        denom = denom * i;
+        result = result + num / denom;
+    }
+    return result;
+}
+
+static double e_R(double x, int n)
+{
+    static double num = 1.0;
+    static double denom = 1.0;
+    if (n == 0)
+        return 1;
+    double temp = e_R(x, n - 1);
+    num = num * x;
+    denom = denom * n;
+    return temp + num / denom;
+}
 
 // Perform the Complexity analysis of the e_i and e_r functions
 
@@ -70,6 +104,8 @@ int main(int argc, char *argv[])
 {
     std::cout << e_i(atof(argv[1]), atoi(argv[2])) << "\n";
     std::cout << e_r(atof(argv[1]), atoi(argv[2])) << "\n";
+    std::cout << e_I(atof(argv[1]), atoi(argv[2])) << "\n";
+    std::cout << e_R(atof(argv[1]), atoi(argv[2])) << "\n";
     return 0;
 }
 
