@@ -1,4 +1,4 @@
-#define TAYLOR_SERIES 1
+#define TAYLOR_SERIES 0
 #if TAYLOR_SERIES
 
 #include <iostream>

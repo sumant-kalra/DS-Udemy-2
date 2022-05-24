@@ -1,8 +1,13 @@
-#define MAIN 0
+#define MAIN 1
 
 #if MAIN
-int main()
+
+#include <iostream>
+
+int main(int argc, char const *argv[])
 {
+    std::cout << "Hello World!\n";
     return 0;
 }
+
 #endif
