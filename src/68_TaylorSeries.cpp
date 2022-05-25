@@ -3,6 +3,10 @@
 
 #include <iostream>
 
+/*
+https://www.emathhelp.net/en/calculators/calculus-1/taylor-and-maclaurin-series-calculator/
+*/
+
 static double power_2I(double p, int q)
 {
     if (q < 0)
@@ -92,6 +96,49 @@ static double e_R(double x, int n)
     num = num * x;
     denom = denom * n;
     return temp + num / denom;
+}
+static double sin(double x, int n)
+{
+    if (n <= 0)
+    {
+        std::cerr << "[Error] The value of x must lie between 1 and 50\n";
+        exit(-1);
+    }
+    if (!(n % 2))
+        --n;
+
+    if (n == 1)
+        return x;
+
+    static double numr = -1 * x * x * x;
+    static double denom = 3 * 2;
+
+    double temp = sin(x, n - 2) + numr / denom;
+    numr = numr * (-1 * x * x);
+    denom = denom * (n + 1) * (n + 2);
+    return temp;
+}
+
+static double cos(double x, int n)
+{
+    if (n < 0)
+    {
+        std::cerr << "[Error] The value of n must lie between 0 and 50\n";
+        exit(-1);
+    }
+    if (n % 2)
+        --n;
+
+    if (n == 0)
+        return 1;
+
+    static double numr = -1 * x * x;
+    static double denom = 2;
+
+    double temp = cos(x, n - 2) + numr / denom;
+    numr = numr * (-1 * x * x);
+    denom = denom * (n + 1) * (n + 2);
+    return temp;
 }
 
 // Perform the Complexity analysis of the e_i and e_r functions
