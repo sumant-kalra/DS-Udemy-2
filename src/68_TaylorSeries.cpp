@@ -141,6 +141,53 @@ static double cos(double x, int n)
     return temp;
 }
 
+static double sine(double x, int n)
+{
+    if (n <= 0)
+    {
+        std::cerr << "[ERROR]: Value of n must be greater than 1\n";
+        exit(-1);
+    }
+
+    if (!(n % 2))
+        --n;
+
+    double result = 0.0;
+    double numr = x;
+    double denom = 1.0;
+    for (int i = 1; i <= n; i += 2)
+    {
+        result += numr / denom;
+        numr *= -1 * x * x;
+        denom *= (i + 1) * (i + 2);
+    }
+    return result;
+}
+
+static double cosine(double x, int n)
+{
+    if (n < 0)
+    {
+        std::cerr << "[ERROR] The value of n must be greater than or equal to 0\n";
+        exit(-1);
+    }
+
+    if (n % 2)
+        --n;
+
+    double result = 0.0;
+    double numr = 1.0;
+    double denom = 1.0;
+
+    for (int i = 0; i <= n; i += 2)
+    {
+        result += numr / denom;
+        numr *= -1 * x * x;
+        denom *= (i + 1) * (i + 2);
+    }
+    return result;
+}
+
 // Perform the Complexity analysis of the e_i and e_r functions
 
 // Taylor series with Honer's rule
