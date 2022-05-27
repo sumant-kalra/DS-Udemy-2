@@ -188,11 +188,71 @@ static double cosine(double x, int n)
     return result;
 }
 
-// Perform the Complexity analysis of the e_i and e_r functions
-
 // Taylor series with Honer's rule
+static double e_2i(double x, int n)
+{
+    if (n < 0)
+    {
+        std::cerr << "[ERROR]: Invalid value of n! n must be non-negative\n";
+        exit(-1);
+    }
 
-// Revisit the problems solved in the recursion chapter
+    double result = 1.0;
+
+    while (n)
+    {
+        result = 1.0 + (x / n) * result;
+        n--;
+    }
+
+    return result;
+}
+
+static double sine_2i(double x, int n)
+{
+    if (n <= 0)
+    {
+        std::cerr << "[ERROR] Invalid value of n! n must be greater than 0\n";
+        exit(-1);
+    }
+
+    if (!(n % 2))
+        --n;
+
+    double result = 1;
+    double xSqrt = x * x;
+
+    while (n >= 3)
+    {
+        result = 1 - (xSqrt / (n * (n - 1))) * result;
+        n -= 2;
+    }
+
+    return x * result;
+}
+
+static double cosine_2i(double x, int n)
+{
+    if (n < 0)
+    {
+        std::cerr << "[ERROR] Invalid value of n! n must be greater than 0\n";
+        exit(-1);
+    }
+
+    if (n % 2)
+        --n;
+
+    double result = 1;
+    double xSqrt = x * x;
+
+    while (n)
+    {
+        result = 1 - (xSqrt / (n * (n - 1))) * result;
+        n -= 2;
+    }
+
+    return result;
+}
 
 int main(int argc, char *argv[])
 {
