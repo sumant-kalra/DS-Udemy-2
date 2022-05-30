@@ -1,4 +1,4 @@
-#define FIB_MAIN 1
+#define FIB_MAIN 0
 #if FIB_MAIN
 
 #include <iostream>
