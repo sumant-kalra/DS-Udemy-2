@@ -1,0 +1,20 @@
+0. Recurrence relation => Recursive function
+1. Do not confuse between the recursive call and the return statement. They both are very different concepts.
+2. Tracing Tree:
+    (a) The commands to be run after the recursive call.
+    (b) Print outputs side by side.
+3. Time Complexity and Space Complexity Analysis
+    1. Time Complexity:
+        a. The total number of recursive function calls.
+        b. Determine the BigO complexity using the recurrence function call.
+            - f(n) represented in terms of the f(n-1), ... so on, .. f(n-k), then in terms of the base case k=n, f(n) = __ f(0)
+    2. Space Complexity:
+        a. The depth of recursion or the height of the recursion tree.
+    [Tips]:
+        a. If each recursive call makes 2 recursive calls further then the time complexity is O(2^n).
+        b. Have to find the upper limit, so you can assume the number of calls to be more than the actual if required, 
+            like in fibonacci series recursive function.
+        c. Number of calls for f(0), f(1), f(2), .... and then try to estimate the relation between them.
+        d. Count at each level, number of levels then the total number.
+
+
