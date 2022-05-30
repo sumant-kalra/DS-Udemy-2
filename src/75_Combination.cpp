@@ -26,6 +26,7 @@ static int nCr_i(int n, int r)
     return numr / denom;
 }
 
+// Using Pascal's Triangle
 static int nCr_r(int n, int r)
 {
     if (r == 0 || r == n)
