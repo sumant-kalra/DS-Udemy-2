@@ -15,4 +15,5 @@ add_executable(runApp
                 src/65_PowerOfN_Rec.cpp
                 src/68_TaylorSeries.cpp
                 src/73_Fibonacci.cpp
-                src/75_Combination.cpp)
+                src/75_Combination.cpp
+                src/76_TowerOfHanoi.cpp)

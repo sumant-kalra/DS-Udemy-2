@@ -1,4 +1,4 @@
-#define MAIN_COMBINATION 1
+#define MAIN_COMBINATION 0
 #if MAIN_COMBINATION
 
 #include <iostream>

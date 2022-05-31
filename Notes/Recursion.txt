@@ -18,3 +18,14 @@
         d. Count at each level, number of levels then the total number.
 
 
+4. Tower of Hanoi recursive solution [S] [I] [D]
+    1. Recurrence relation => Recursive function
+    2. The base case [Easy] - moving a single plate from one tower to another.
+    3. Recurrence relation [Difficult] - A set of 3 steps as if we were moving only 2 plates
+        (a) Consider the top (n-1) plates in the [S] as a single plate, and move it from [S] to [I].
+        (b) Move the last plate (nth plate) from the [S] to [D].
+        (c) Move the n-1 plates from [I] to [D]. 
+    
+
+
+
