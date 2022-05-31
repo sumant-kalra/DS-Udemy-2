@@ -1,4 +1,5 @@
-0. Recurrence relation => Recursive function
+0. Recurrence relation => Recursive function 
+    as we are trying to solve the bigger problem by solving a number of smaller problems.
 1. Do not confuse between the recursive call and the return statement. They both are very different concepts.
 2. Tracing Tree:
     (a) The commands to be run after the recursive call.
@@ -18,7 +19,8 @@
         d. Count at each level, number of levels then the total number.
 
 
-4. Tower of Hanoi recursive solution [S] [I] [D]
+4. Tower of Hanoi recursive solution 
+        [S] [I] [D]
     1. Recurrence relation => Recursive function
     2. The base case [Easy] - moving a single plate from one tower to another.
     3. Recurrence relation [Difficult] - A set of 3 steps as if we were moving only 2 plates
