@@ -22,12 +22,17 @@
 4. Tower of Hanoi recursive solution 
         [S] [I] [D]
     1. Recurrence relation => Recursive function
-    2. The base case [Easy] - moving a single plate from one tower to another.
-    3. Recurrence relation [Difficult] - A set of 3 steps as if we were moving only 2 plates
-        (a) Consider the top (n-1) plates in the [S] as a single plate, and move it from [S] to [I].
-        (b) Move the last plate (nth plate) from the [S] to [D].
-        (c) Move the n-1 plates from [I] to [D]. 
+    2. The base case [Easy] 
+        There are two base cases:
+            (a) Moving a single plate from one tower to another --> case if(n==1)
+            (b) Moving a set of two plates from one tower to another --> case if(n==2)
+    3. Recurrence relation [Difficult]
+        Moving 'n' number of plates from A to C via B can be considered as equivalent to moving two plates.
+        A set of 3 steps as if we were moving only 2 plates:
+            (a) Consider the top (n-1) plates in the [S] as a single plate, and move it from [S] to [I]. [Recursive call]
+            (b) Move the last plate (nth plate) from the [S] to [D].
+            (c) Move the n-1 plates from [I] to [D]. [Recursive call]
     
-
+ 
 
 
