@@ -16,4 +16,5 @@ add_executable(runApp
                 src/68_TaylorSeries.cpp
                 src/73_Fibonacci.cpp
                 src/75_Combination.cpp
-                src/76_TowerOfHanoi.cpp)
+                src/76_TowerOfHanoi.cpp
+                src/84_Arrays.cpp)
