@@ -9,7 +9,7 @@
  *
  */
 
-#define ARRAYS_MAIN 1
+#define ARRAYS_MAIN 0
 #if ARRAYS_MAIN
 
 #include <iostream>

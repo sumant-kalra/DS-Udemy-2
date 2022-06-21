@@ -17,4 +17,5 @@ add_executable(runApp
                 src/73_Fibonacci.cpp
                 src/75_Combination.cpp
                 src/76_TowerOfHanoi.cpp
-                src/84_Arrays.cpp)
+                src/84_Arrays.cpp
+                src/0_Primes.cpp)
