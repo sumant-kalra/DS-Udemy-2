@@ -1,0 +1,42 @@
+[0] Analysis criteria: [Time Complexity; Space Complexity; Adaptive; Stability]
+    1. Time Complexity: number(Comparisons)
+        Two operations for sorting, count each of them
+        (a) Comparison
+        (b) Swap
+        Comparison will always be performed whereas swap is performed after the comparison fails
+    2. Space Complexity: Auxillary Space
+        Extra Space Consumption
+    3. Adaptive
+        Better time complexity if the list is already sorted
+    4. Stability
+        Duplicate elements should retain their relative order.
+        Required because if the list was already sorted based on some other criteria then relative order of 
+        duplicates should be maintained after re-sorting.
+
+            A B [C] D [E] F
+            7 4  9  3  9  0
+
+            F D B A [C] [D]
+            0 3 4 7  9   9
+
+[1] Sorting Techniques:
+    (a) Comparison based sorts
+        1.  Bubble sort      O(n2)
+        2.  Insertion sort   O(n2)
+        3.  Selection sort   O(n2)
+        4.  Heap sort        O(nlogn)
+        5.  Merge sort       O(nlogn)
+        6.  Quick sort       O(nlogn)
+        7.  Tree sort        O(nlogn)
+        8.  Shell sort       O(n3/2)
+    (b) Index based sorts
+        9.  Count sort       O(n)
+        10. Bucket/Bin sort  O(n)
+        11. Radix sort       o(n)    
+    
+[2] (a) Define as per the name of algorithm
+    (b) Analysis (4) for each pass and overall
+
+
+
+

@@ -18,4 +18,5 @@ add_executable(runApp
                 src/75_Combination.cpp
                 src/76_TowerOfHanoi.cpp
                 src/84_Arrays.cpp
-                src/0_Primes.cpp)
+                src/0_Primes.cpp
+                src/1_Sorting.cpp)
