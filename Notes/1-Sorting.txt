@@ -3,7 +3,9 @@
         Two operations for sorting, count each of them
         (a) Comparison
         (b) Swap
-        Comparison will always be performed whereas swap is performed after the comparison fails
+        Comparison will always be performed whereas swap is performed after the comparison fails.
+        Though the time complexity depends on the number of comparisons only but the number of swaps also contribute
+        to the total time taken in the execution.
     2. Space Complexity: Auxillary Space
         Extra Space Consumption
     3. Adaptive
@@ -12,7 +14,6 @@
         Duplicate elements should retain their relative order.
         Required because if the list was already sorted based on some other criteria then relative order of 
         duplicates should be maintained after re-sorting.
-
             A B [C] D [E] F
             7 4  9  3  9  0
 
@@ -21,8 +22,8 @@
 
 [1] Sorting Techniques:
     (a) Comparison based sorts
-        1.  Bubble sort      O(n2)
-        2.  Insertion sort   O(n2)
+        1.  Bubble sort      O(n2)          
+        2.  Insertion sort   O(n2)          
         3.  Selection sort   O(n2)
         4.  Heap sort        O(nlogn)
         5.  Merge sort       O(nlogn)
@@ -35,8 +36,32 @@
         11. Radix sort       o(n)    
     
 [2] (a) Define as per the name of algorithm
-    (b) Analysis (4) for each pass and overall
+    (b) Analysis (4) and observations for each pass and overall behaviour till the final result
 
+3. Defining the Sorting Techniques:
+    1. Bubble Sort: 
+        The heaviest element settle down while the smaller bubble up.
+        * With each pass, the largest among the unsorted gets to it's correct position in the list, 
+          useful if only the largest is to be found.
+    2. Insertion sort
+        [INSERTION]
+        Problem:  Insert an element into a sorted list at appropriate place by shifting the larger elements to the right.
+        Solution: Start shifting the elements from the right without knowing the exact place where the element should be.
+                    - Compare the new element with the last element of the sorted list.
+                    - If smaller then, swap.
+                    - Continue swap until the element in the left is smaller.
+        [INSERTION SORT]
+        Problem:  Sort an unsorted list of elements
+        Solution: "List with only one element is always sorted"
+                    - [Sorted] | [Unsorted]
+                    - Move the elements from the right to the left one by one by using the insertion logic.
+                    1 Insertion = 1 Pass
 
+        * With each pass, not even one element is sorted to it's place.
+        * Developed for linked lists as insertion in linked list is O(1) once the appropriate location for the new element 
+          is determined. Better run time with linked list than the array.
+          Inserting an element into a sorted array: Comparison O(n) + Swap O(n)
+          Inserting an element into a sorted linked list: Comparison O(n) + O(1) insertion
+        
 
 
