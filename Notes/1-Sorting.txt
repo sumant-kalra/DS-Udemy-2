@@ -1,3 +1,10 @@
+(a) Define as per the name of algorithm
+(b) Pass - Define a pass
+(c) Total number of passes; Each pass - count(Comparisons), count(Swaps)
+(d) Analysis (4)
+
+==============================================================================================================================
+
 [0] Analysis criteria: [Time Complexity; Space Complexity; Adaptive; Stability]
     1. Time Complexity: number(Comparisons)
         Two operations for sorting, count each of them
@@ -28,6 +35,7 @@
         4.  Heap sort        O(nlogn)
         5.  Merge sort       O(nlogn)
         6.  Quick sort       O(nlogn)
+        ------------------------------
         7.  Tree sort        O(nlogn)
         8.  Shell sort       O(n3/2)
     (b) Index based sorts
@@ -35,14 +43,20 @@
         10. Bucket/Bin sort  O(n)
         11. Radix sort       o(n)    
     
-[2] (a) Define as per the name of algorithm
-    (b) Analysis (4) and observations for each pass and overall behaviour till the final result
+    Adaptive algorithms: 
+        * Bubble sort (modified using flag) 
+        * Insertion sort 
+    Stable algorithms:
+        * Bubble sort
+        * Insertion sort
+        * Merge sort
 
-3. Defining the Sorting Techniques:
+2. Defining the Sorting Techniques:
     1. Bubble Sort: 
         The heaviest element settle down while the smaller bubble up.
         * With each pass, the largest among the unsorted gets to it's correct position in the list, 
           useful if only the largest is to be found.
+        * By default, bubble sort is not adaptive in nature but it is made adaptive by modification using a flag.
     2. Insertion sort
         [INSERTION]
         Problem:  Insert an element into a sorted list at appropriate place by shifting the larger elements to the right.
