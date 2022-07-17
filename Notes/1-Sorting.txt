@@ -1,81 +1,196 @@
-(a) Define as per the name of algorithm
-(b) Pass - Define a pass
-(c) Total number of passes; Each pass - count(Comparisons), count(Swaps)
-(d) Analysis (4)
+Analysis of Sorting Algorithms [Bubble sort; Insertion sort; Selection sort; Quick sort; Merge sort]
+    (a) Define as per the name of algorithm
+    (b) Pass - Define a pass, where ever valid
+    (c) Total number of passes; Each pass - count(Comparisons), count(Swaps)
+    (d) Analysis (4)
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ==============================================================================================================================
+Sorting Algorithms 
 
-[0] Analysis criteria: [Time Complexity; Space Complexity; Adaptive; Stability]
-    1. Time Complexity: number(Comparisons)
-        Two operations for sorting, count each of them
-        (a) Comparison
-        (b) Swap
-        Comparison will always be performed whereas swap is performed after the comparison fails.
-        Though the time complexity depends on the number of comparisons only but the number of swaps also contribute
-        to the total time taken in the execution.
-    2. Space Complexity: Auxillary Space
-        Extra Space Consumption
-    3. Adaptive
-        Better time complexity if the list is already sorted
-    4. Stability
-        Duplicate elements should retain their relative order.
-        Required because if the list was already sorted based on some other criteria then relative order of 
-        duplicates should be maintained after re-sorting.
-            A B [C] D [E] F
-            7 4  9  3  9  0
+    [0] Analysis criteria: [Time Complexity; Space Complexity; Adaptive; Stability]
+        1. Time Complexity: number(Comparisons)
+            Two operations for sorting, count each of them
+            (a) Comparison
+            (b) Swap
+            Comparison will always be performed whereas swap is performed after the comparison fails.
+            Though the time complexity depends on the number of comparisons only but the number of swaps also contribute
+            to the total time taken in the execution.
+        2. Space Complexity: Auxillary Space
+            Extra Space Consumption
+        3. Adaptive
+            Better time complexity if the list is already sorted
+        4. Stability
+            Duplicate elements should retain their relative order.
+            Required because if the list was already sorted based on some other criteria then relative order of 
+            duplicates should be maintained after re-sorting.
+                A B [C] D [E] F
+                7 4  9  3  9  0
 
-            F D B A [C] [D]
-            0 3 4 7  9   9
+                F D B A [C] [D]
+                0 3 4 7  9   9
 
-[1] Sorting Techniques:
-    (a) Comparison based sorts
-        1.  Bubble sort      O(n2)          
-        2.  Insertion sort   O(n2)          
-        3.  Selection sort   O(n2)
-        4.  Heap sort        O(nlogn)
-        5.  Merge sort       O(nlogn)
-        6.  Quick sort       O(nlogn)
-        ------------------------------
-        7.  Tree sort        O(nlogn)
-        8.  Shell sort       O(n3/2)
-    (b) Index based sorts
-        9.  Count sort       O(n)
-        10. Bucket/Bin sort  O(n)
-        11. Radix sort       o(n)    
-    
-    Adaptive algorithms: 
-        * Bubble sort (modified using flag) 
-        * Insertion sort 
-    Stable algorithms:
-        * Bubble sort
-        * Insertion sort
-        * Merge sort
+    [1] Sorting Techniques:
 
-2. Defining the Sorting Techniques:
-    1. Bubble Sort: 
-        The heaviest element settle down while the smaller bubble up.
-        * With each pass, the largest among the unsorted gets to it's correct position in the list, 
-          useful if only the largest is to be found.
-        * By default, bubble sort is not adaptive in nature but it is made adaptive by modification using a flag.
-    2. Insertion sort
-        [INSERTION]
-        Problem:  Insert an element into a sorted list at appropriate place by shifting the larger elements to the right.
-        Solution: Start shifting the elements from the right without knowing the exact place where the element should be.
-                    - Compare the new element with the last element of the sorted list.
-                    - If smaller then, swap.
-                    - Continue swap until the element in the left is smaller.
-        [INSERTION SORT]
-        Problem:  Sort an unsorted list of elements
-        Solution: "List with only one element is always sorted"
-                    - [Sorted] | [Unsorted]
-                    - Move the elements from the right to the left one by one by using the insertion logic.
-                    1 Insertion = 1 Pass
-
-        * With each pass, not even one element is sorted to it's place.
-        * Developed for linked lists as insertion in linked list is O(1) once the appropriate location for the new element 
-          is determined. Better run time with linked list than the array.
-          Inserting an element into a sorted array: Comparison O(n) + Swap O(n)
-          Inserting an element into a sorted linked list: Comparison O(n) + O(1) insertion
+        (a) Comparison based sorts
+            1.  Bubble sort      O(n2)          
+            2.  Insertion sort   O(n2)          
+            3.  Selection sort   O(n2)  
+            4.  Quick sort       O(nlogn)
+            5.  Merge sort       O(nlogn)
+            ------------------------------
+            6.  Heap sort        O(nlogn)
+            7.  Tree sort        O(nlogn)
+            8.  Shell sort       O(n3/2)
+        (b) Index based sorts
+            9.  Count sort       O(n)
+            10. Bucket/Bin sort  O(n)
+            11. Radix sort       o(n)    
         
+        Adaptive algorithms: 
+            * Bubble sort (modified using flag) 
+            * Insertion sort 
+        Stable algorithms:
+            * Bubble sort
+            * Insertion sort
+            * Merge sort
+
+    2. Defining the Sorting Techniques:
+        1. Bubble sort: 
+            "The heaviest element settle down while the smaller bubble up."
+            "1 Pass - the heaviest from the unsorted gets settled at it's correct location"
+
+            * With each pass, the largest among the unsorted gets to it's correct position in the list;
+            useful if only the largest is to be found.
+            * By default, bubble sort is not adaptive in nature but it is made adaptive by modification using a flag.
+        2. Insertion sort:
+            "Insert the elements from the unsorted list in the right into the sorted list in the left"
+            "1 Pass - 1 insertion into the sorted part from the unsorted"
+
+            [INSERTION]
+            Problem:  Insert an element into a sorted list at appropriate place by shifting the larger elements to the right.
+            Solution: Start shifting the elements from the right without knowing the exact place where the element should be.
+                        - Compare the new element with the last element of the sorted list.
+                        - If smaller then, swap.
+                        - Continue swap until the element in the left is smaller.
+            [INSERTION SORT]
+            Problem:  Sort an unsorted list of elements
+            Solution: "List with only one element is always sorted"
+                        - [Sorted] | [Unsorted]
+                        - Move the elements from the right to the left one by one by using the insertion logic.
+
+            * With each pass, not even one element is sorted to it's place.
+            * Developed for linked lists as insertion in linked list is O(1) once the appropriate location for the new element 
+            is determined. Better run time with linked list than the array.
+            Inserting an element into a sorted array: Comparison O(n) + Swap O(n)
+            Inserting an element into a sorted linked list: Comparison O(n) + O(1) insertion
+        3. Selection sort:
+            "For each position, the correct element is identified from the list"
+            "1 Pass - the selected position gets it's appropriate element; the smallest from the unsorted part gets settled"
+
+            * With each pass, the smallest among the unsorted gets to it's correct position in the list;
+            useful if only the smallest is to be found.
+            * Least number of swaps: Swapping elements only after finding the correct location for the number 
+            * Non-adaptive: Can not be made adaptive using a flag as in bubble sort
+            * Unstable: Relative order of the elements with same values is not maintained as swapping is done at the end
+        
+        4. Quick sort [Divide and Conquer]:
+            "For each element of the list, the correct position is identified.
+             An element is said to be in the correct position (as if it were in a sorted list) when all the elements to it's left are 
+             either smaller or equal while all the elements to the right are either greater or equal to the element."
+            "1 Pass - 1 partitioning" 
+            
+            * Pivot element - The selected element
+            * Partitioning - Placing the pivot element at it's correct position as if it were in a sorted list, and diving the list 
+                              into two unsorted lists in the left and right of the pivot element.
+            
+            Steps:
+            (0) ____________ [MODIFIED QUICK SORT]
+            (a) Select a pivot element. Generally the left most element for the ease of swapping, 
+                however any element can be taken as pivot.
+            (b) Partitioning for the pivot element.
+            (c) Perform the steps (a) and (b) recursively on the left and right sublists of the pivot element until 
+                all the elements are their correct positions that is the list is sorted.
+
+            Important points:
+                Time complexity:
+                    * The best case time complexity is O(nlogn), when each partitioning happens at the middle position of the list.
+                      It means the selected element is to positioned in the middle of the list.
+                    * The worst case time complexity is O(n^2), that happens when the partitioning happens at the ends that 
+                      is left or right.
+                    * The average case time complexity is O(nlogn)
+                Space Complexity:
+                    * The space complexity is O(logn) when implementation is done using recursive function calls, 
+                      which is generally the case.
+                Adaptive:
+                    * Non Adaptive
+                    * If the list is sorted in ascending or descending order, and the left most element is selected as pivot, the 
+                      partitioning in all the recursive steps will be done at the extreme ends of the list that is left or right, so 
+                      it will always have the worst case time complexity of O(n^2).
+                    * MODIFIED VERSION OF QUICK SORT: 
+                        Step 0: For an unknown list to be sorted, swap the element at the middle of the list with 
+                                the element in the left.
+                Stability:
+                    * Unstable as the relative order of duplicates will not be preserved.
+
+              
+            
+
+----------------------------------------------------------------------------------------------------------------------------------            
+Algorithms strategy
+    0. Brute force 
+        Testing out all the possible solutions of the problem to solve it.
+    1. Divide and Conquer [Recursive in nature]
+        Steps:
+        (a) Divide the problem into subproblems
+        (b) Solve the subproblems
+        (c) Combine the subproblems to obtain the final solution
+
+        Points to be kept in the mind:
+        - Recursive in nature
+        - The subproblems should be the same problem at a smaller scale
+        - The problem is divided into subproblems till the subproblems are solvable
+        - There should be a mechanism to combine the solutions from the subproblems to obtain the final solution
+
+        Examples:
+        - Binary search
+        - Finding maximum and minimum
+        - Merge sort 
+        - Quick sort 
+        - Strassen's matrix multiplication
+    
+    2. Greedy Approach
+        - used for solving optimization problems
+        - At each substep of the problem, the optimum solution at that moment is selected with assumption 
+            optimization at each substep leads to the final optimum solution. 
+    
+    3. Dynamic programming
+        - used for solving optimization problems
+        - Problem is divided into similar sub-problems, so that their results can be re-used. Before solving the in-hand sub-problem, 
+          dynamic algorithm will try to examine the results of the previously solved sub-problems.
+
 
 

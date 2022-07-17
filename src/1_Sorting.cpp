@@ -1,14 +1,16 @@
 #include <iostream>
 
-void sort_swap(int &a, int &b);
+void swap(int &a, int &b);
 void bubbleSort(int *arr, size_t size);
 void insertionSort(int *arr, size_t size);
+void selectionSort(int *arr, size_t size);
 
 int main(int argc, char const *argv[])
 {
     int arr[6] = {5, 9, 8, 3, 4, 7};
     // bubbleSort(arr, 6);
-    insertionSort(arr, 6);
+    // insertionSort(arr, 6);
+    selectionSort(arr, 6);
 
     for (size_t i = 0; i < 6; ++i)
         std::cout << arr[i] << " ";
@@ -17,7 +19,7 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-void sort_swap(int &a, int &b)
+void swap(int &a, int &b)
 {
     int temp = a;
     a = b;
@@ -34,7 +36,7 @@ void bubbleSort(int *arr, size_t size)
         {
             if (arr[j] > arr[j + 1])
             {
-                sort_swap(arr[j], arr[j + 1]);
+                swap(arr[j], arr[j + 1]);
                 isSorted = false;
             }
         }
@@ -50,7 +52,21 @@ void insertionSort(int *arr, size_t size)
         for (int j = i; j > 0; --j)
         {
             if (arr[j] < arr[j - 1])
-                sort_swap(arr[j], arr[j - 1]);
+                swap(arr[j], arr[j - 1]);
         }
+    }
+}
+
+void selectionSort(int *arr, size_t size)
+{
+    for (int i = 0; i < size - 1; ++i)
+    {
+        int indexSmallestElement = i;
+        for (int j = i; j < size; ++j)
+        {
+            if (arr[j] < arr[indexSmallestElement])
+                indexSmallestElement = j;
+        }
+        swap(arr[i], arr[indexSmallestElement]);
     }
 }
