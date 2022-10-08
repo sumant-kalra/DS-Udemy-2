@@ -10,3 +10,4 @@ build-release/
 
 # IDE files
 .vscode/
+.DS_Store

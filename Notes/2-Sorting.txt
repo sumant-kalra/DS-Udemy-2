@@ -147,14 +147,36 @@ Sorting Algorithms
                       which is generally the case.
                 Adaptive:
                     * Non Adaptive
-                    * If the list is sorted in ascending or descending order, and the left most element is selected as pivot, the 
+                    * If the list is sorted in ascending or descending order and the left most element is selected as pivot, the 
                       partitioning in all the recursive steps will be done at the extreme ends of the list that is left or right, so 
                       it will always have the worst case time complexity of O(n^2).
-                    * MODIFIED VERSION OF QUICK SORT: 
+                    * [MODIFIED VERSION OF QUICK SORT]
                         Step 0: For an unknown list to be sorted, swap the element at the middle of the list with 
                                 the element in the left.
                 Stability:
                     * Unstable as the relative order of duplicates will not be preserved.
+
+                FAQS:
+                [Q1] How could we improve the time complexity to O(nlogn)? 
+                     The algorithms like Bubble sort, Insertion sort and Selection sort have O(n^2), which makes sense.
+                [A1] By trying to position an element to it's correct position, we are doing more work per pass.
+                        Other elements also get moved closer to their correct position as if it were in a sorted array,
+                        it makes the sorting of other elements much easier as the domain of array for all the elements is reduced.
+                        This results in reduction of total number of passes required, hence better time complexity.
+                        (The approach is based on the the fact that an array can be accessed efficiently from both the ends.)
+                        Whereas in Bubble sort, Insertion sort and Selection sort, we are trying to find correct elements at positions.
+                        This is an efficient way as it only works on sorting a single position at a time.
+                
+                [Q2] Does the space complexity has to do anything with the improvement of time complexity?
+                [A2] No, the space complexity for the quick sort implementation is O(nlogn) when implemented with recursive calls.
+                     Any recursive algorithm can be converted to an iterative algorithm and vice versa.
+                     The same algorithm when implemented with iterative approach will have O(1) time complexity.
+                     But it was not done because the implementation becomes complicated and hence expensive.
+                     Whereas modern computers have enough memory to handle O(logn) space complexity algorithms. Optimized.
+                     So, the improvement in Time Complexity is purely because of the reasoning in [A1].
+
+        5. Merge Sort:
+            
 
               
             
